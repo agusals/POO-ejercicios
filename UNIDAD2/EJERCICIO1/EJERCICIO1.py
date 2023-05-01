@@ -9,21 +9,23 @@ def menu() -> int:
     print("3_ Registrar email\n")
     print("4_ Leer archivo\n")
     print("5_ Salir\n")
-
     
     return int(input())
 
+def cls():
+    os.system("cls" if os.name == "nt" else "clear")
+
 def opcion1(lista):
     nombreuser = input("Ingrese nombre del usuario: ")
-    os.system("CLS")
+    cls()
     idcuenta = input("Ingrese identificador de cuenta: ")
-    os.system("CLS")
+    cls()
     dominio = input("Ingrese dominio: ")
-    os.system("CLS")
+    cls()
     tipodominio = input("Ingrese tipo de dominio: ")
-    os.system("CLS")
+    cls()
     contra = input("Ingrese contraseña: ")
-    os.system("CLS")
+    cls()
     
     email = e(idcuenta, dominio, tipodominio, contra)
     lista.append(email)
@@ -48,7 +50,7 @@ def opcion3(lista):
     input()
 
 def opcion4(listacsv):
-    archivo = open("Unidad 2\Ejercicio1\cuentas.csv")
+    archivo = open("UNIDAD2\EJERCICIO1\cuentas.csv")
     reader = csv.reader(archivo, delimiter=",", skipinitialspace=True)
     
     for fila in reader:
@@ -56,28 +58,41 @@ def opcion4(listacsv):
             listacsv.append(e())
         for i in range(len(fila)):
             mail = fila[i]
-            #print(fila[i]) 
-            #correoobj = e()
-            listacsv[i].crearCuenta(str(mail), False)
+            listacsv[i].crearCuenta(str(mail))
              
         
     archivo.close()
 
     idcuenta = input("Ingrese identificador de cuenta a buscar: ")
     print(" ")
-    for i in range(len(listacsv)):
+    cls()
+    
+    i = 0
+    fin = False
+    while i != len(listacsv) and fin == False:
         if listacsv[i].getIDcuenta() == idcuenta:
-            print("id de cuenta repetido!!\n")
+            print("ID de cuenta encontrado!!\n")
+            print("{email}".format(email = listacsv[i].retornaEmail()))
+            fin = True
+        i+=1
+
+    if fin == False:
+        print("ID no encontrado\n")
+
     input()
         
+
+
+#--------- MAIN ----------------
+
 if __name__ == "__main__":
-    os.system("CLS")
+    cls()
     respuesta = menu()
     lista = []
     listacsv = []
 
     while respuesta != 5:
-        os.system("CLS")
+        cls()
         if respuesta == 1:
             opcion1(lista)
         elif respuesta == 2:
@@ -87,25 +102,8 @@ if __name__ == "__main__":
         elif respuesta == 4:
             opcion4(listacsv)
     
-        os.system("CLS")
+        cls()
         respuesta = menu()
     
-    os.system("CLS")
+    cls()
     print("Programa finalizado.")
-
-
-    """
-    emailobj = e("a","b","c","d")
-    print(emailobj.retornaEmail())
-
-    a = "papa.ola,soy1una7string ¿loca"
-    b = re.split(',|1|7| ¿|\.', a)
-    print(a)
-    print("")
-    print(b)
-    print("")
-    emailobj.crearCuenta("elpepe.etesech@robertinsky.com")
-    print(emailobj.retornaEmail())
-    """
-
-#holae

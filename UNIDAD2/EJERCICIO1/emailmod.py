@@ -19,10 +19,9 @@ class Email:
         print("\nContraseña guardada!\n")
     def getIDcuenta(self) -> str:
         return self.__idcuenta
-    def crearCuenta(self, mail: str, confirm: bool):
+    def crearCuenta(self, mail: str):
         self.__idcuenta = mail.split('@')[0]
         domycom = mail.split('@')[1]
         self.__dominio = domycom.split('.')[0]
-        self.__tipodom = domycom.split('.')[1]
-        if confirm:
-            print("Direccion registrada!\n")
+        self.__tipodom = domycom.split('.')[1]       
+        print("Direccion registrada!\n")
