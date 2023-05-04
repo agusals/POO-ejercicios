@@ -45,4 +45,4 @@ if __name__ == "__main__":
         opcion = menu()
     
     os.system("CLS")
-    print("\nPrograma finalizado...\n")
+    print("Programa finalizado...\n")
