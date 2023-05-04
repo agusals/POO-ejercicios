@@ -46,4 +46,4 @@ if __name__ == "__main__":
     input()
     os.system("CLS")
 
-    print("\nPrograma finalizado...\n")
+    print("Programa finalizado...\n")
