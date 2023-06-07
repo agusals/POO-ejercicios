@@ -8,7 +8,7 @@ class manejafacultades:
 
     @classmethod
     def __init__(cls):
-        archivo = open("UNIDAD3/Ejercicio1/Facultades.csv", encoding='utf8')
+        archivo = open("UNIDAD3/EJERCICIO1/Facultades.csv", encoding='utf8')
         reader = csv.reader(archivo, delimiter=",")
 
         indice = -1
