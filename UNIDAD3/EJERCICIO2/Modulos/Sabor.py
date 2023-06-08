@@ -8,3 +8,6 @@ class Sabor:
         self.__idsabor = int(idsabor)
         self.__ingredientes = str(ingredientes)
         self.__nombresabor = str(nombresabor)
+
+    def getidsabor(self):
+        return self.__idsabor

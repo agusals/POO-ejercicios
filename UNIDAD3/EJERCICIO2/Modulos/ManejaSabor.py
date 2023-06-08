@@ -16,5 +16,21 @@ class manejasabor:
             self.__listasabores.append(Sabor(fila[0], fila[1], fila[2]))
 
         archivo.close()
+
+    def getsabor(self, idsabor):
+
+        i = 0
+        band = False
+
+        while band == False:
+            if self.__listasabores[i].getidsabor() == int(idsabor):
+                band = True
+                return self.__listasabores[i]
+            
+            i += 1
+
+        
+                
+            
     
 
