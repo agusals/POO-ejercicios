@@ -7,3 +7,4 @@ class manejahelado:
     def ventahelado(self, gramos, precio):
 
         self.__heladosvendidos.append(Helado(gramos, precio))
+        
